@@ -1,5 +1,40 @@
 
+
+# scopes
+message = 'Muz'
+
+
+def greet_first(name):
+    global message
+    message = 'a'
+
+
+greet_first('muz')
+print(message)
+
+
+# xxargs into function
+
+def multi_user(**user):
+    print(user['name'])
+    print(user)
+
+
+multi_user(id=1, name='muzaffar', age=35)
+
+# xargs into function
+
+
+def multiply(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+
+print(multiply(2, 3, 4, 5))
 # default argument
+
 
 def increament(number, by=3):
     return number + by
