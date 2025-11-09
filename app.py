@@ -1,6 +1,7 @@
 
 
 # scopes
+import math
 message = 'Muz'
 
 
@@ -86,4 +87,62 @@ greet()
 #         print(number)
 # print(f"we have {count} even numbers")
 
-Tesing
+
+# String methods
+
+x = 1
+x = 1.1
+x = 1+2j
+print(10+3)
+print(10-3)
+print(10 % 3)
+print(10 / 3)
+print(10*3)
+
+# working with numbers
+print(round(2.9))
+print(abs(-2.9))
+print((2.0))
+print(math.ceil(3.4))
+
+# TYPE Cenversion
+# x = input("x")
+
+# y = x + 1
+
+# cONTRIL fLOW
+# Fundamentals of programming
+
+# Comparison Operators
+# Conditional Statements
+
+templature = 15
+
+if templature > 30:
+    print("It's Warm")
+    print("Drink water")
+elif templature > 20:
+    print("It's Nice")
+else:
+    print("It's Cold")
+print("Done")
+
+# Ternary Operator
+
+age = 12
+
+if age > 18:
+    print("Eligable")
+else:
+    print("Not Eligable")
+
+age1 = 20
+if age1 > 18:
+    message = "Eligable1"
+else:
+    message = "Not Eligable1"
+
+message2 = "Eligable2" if age1 >= 18 else "Not Eligable2"
+
+print(message)
+print(message2)
