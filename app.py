@@ -146,3 +146,25 @@ message2 = "Eligable2" if age1 >= 18 else "Not Eligable2"
 
 print(message)
 print(message2)
+
+# Logical Operators
+
+high_income = False
+good_income = True
+student = False
+
+if (high_income and good_income) or not student:
+    print("Eligable")
+else:
+    print("Not Eligable")
+
+# short-circuit Evaluation
+
+# chaining comparition operator
+# age should be bewteen 18 and 65
+age = 16
+# if age >= 18 and age < 65:
+if 18 <= age < 65:
+    print("Eligable age")
+else:
+    print("Age Not_Eligable")
