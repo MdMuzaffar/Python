@@ -168,3 +168,32 @@ if 18 <= age < 65:
     print("Eligable age")
 else:
     print("Age Not_Eligable")
+
+if 10 == "10":
+    print("a")
+elif "bag" > "apple" and "bag" > "cat":
+    print("b")
+else:
+    print("c")
+
+# For Loops
+
+for number in range(1, 3):
+    print("Attempt", number, number * ".")
+
+# For Else
+
+successfull = False
+for number in range(3):
+    print("Attempt")
+    if successfull:
+        print("successfull")
+        break
+else:
+    print("Attend 3 times successfully")
+
+# Nested Loop
+
+for x in range(5):
+    for y in range(2):
+        print(f"({x},{y})")
