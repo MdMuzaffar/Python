@@ -197,3 +197,35 @@ else:
 for x in range(5):
     for y in range(2):
         print(f"({x},{y})")
+
+
+# Iterables
+
+# for x in range(5):
+# for x in "python":
+for x in [1, 2, 3, 4]:
+    print(x)
+shopping_cart = ('apple', 'Car')
+for item in shopping_cart:
+    print(item)
+
+# While loops
+
+# number = 100
+# while number > 0:
+#     print(number)
+#     number //= 2
+
+
+command = ""
+
+# while command != "quit":
+#     command = input(">")
+#     print(command)
+
+count = 0
+for number in range(1, 10):
+    if number % 2 == 0:
+        count += 1
+        print(number)
+print(f"we have {count} even numbers")
