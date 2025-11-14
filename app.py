@@ -229,3 +229,126 @@ for number in range(1, 10):
         count += 1
         print(number)
 print(f"we have {count} even numbers")
+
+# -----------------Functions-------------------------
+
+# Defining Function
+
+# 1- Perform a task
+
+
+def greet():
+    print("Hi There")
+    print("Welcome aboard")
+
+
+greet()
+
+# Arguments
+
+# 2- Return a value
+
+
+def get_greeet(first_name, last_name):
+    print(f"{first_name} {last_name}")
+    print(last_name)
+
+
+get_greeet("Muzaffar", "Ahmed")
+
+# Types of functions
+# 1- Perform a task
+# 2- Return a value
+
+# Keyword Arguments
+
+
+def increament(number, by):
+    return number + by
+
+
+# result =
+print(increament(2, by=1))
+
+# Default Arguments
+
+
+def default_increament(number, by=1):
+    return number + by
+
+
+print(default_increament(3, 6))
+
+# Xargs
+
+
+def add_number(a, b):
+    print(a+b)
+
+
+result_fun = add_number(1, 6)
+print(result_fun)
+# print(result_fun * 5) -- with this we cannt use the this result_fun varialbe
+
+
+def add_numbers(a, b):
+    return a+b
+
+
+result_return = add_numbers(1, 3)
+print(result_return)
+print(result_return * 2)
+
+# ---------------return multiple variables | *Args------------------------------------------------
+
+
+def multiply(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return (total)
+
+
+print(multiply(2, 3, 4, 5))
+
+sum_multiply = multiply(2, 3, 4, 5)
+print(sum_multiply * 2)
+
+
+# --------------------**Args---------------------------------------------
+
+def save_user(**User):
+    print(User)
+
+
+save_user(Name="Muzaffar", No=1, age=35)
+
+# ---------------------------Scope------------------------------------
+
+# -----------------------------Debugging---------------------------------
+
+# -------------------------------VSCode Tricks(Windows)-------------
+
+# -----------------------Exercise-------------------------
+
+
+def fizz_buzz(number):
+    # if number % 3 == 0:
+    #     print("Fizz")
+    # elif number % 5 == 0:
+    #     print("Buzz")
+    # elif number % 3 == 0 and number % 5 == 0:
+    #     print("Fizz & Buzz")
+    # else:
+    #     print(number)
+
+    if number % 3 == 0 and number % 5 == 0:
+        return "FizzBuzz"
+    if number % 3 == 0:
+        return "Fizz"
+    if number % 5 == 0:
+        return "Buzz"
+    return (number)
+
+
+print(fizz_buzz(5))
