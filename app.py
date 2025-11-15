@@ -352,3 +352,21 @@ def fizz_buzz(number):
 
 
 print(fizz_buzz(5))
+
+# ----------------------- Data Structures (List,Tuples,Ser,Dictionaires)--------------------------------
+
+
+letters = ["a", "b", "c"]
+number = [1, 2, 3]
+combined = letters + number
+print(combined)
+print(list(range(20)))
+print(len(combined))
+
+# ---------------------------- Accesssing Items---------------------------------------------------
+
+letters[0] = "A"
+print(letters[0:2])
+print(letters)
+numbers = list(range(20))
+print(numbers[:: 3])
