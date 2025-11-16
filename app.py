@@ -356,17 +356,93 @@ print(fizz_buzz(5))
 # ----------------------- Data Structures (List,Tuples,Ser,Dictionaires)--------------------------------
 
 
-letters = ["a", "b", "c"]
-number = [1, 2, 3]
-combined = letters + number
-print(combined)
-print(list(range(20)))
-print(len(combined))
+# letters = ["a", "b", "c"]
+# # number = [1, 2, 3]
+# combined = letters + number
+# print(combined)
+# print(list(range(20)))
+# print(len(combined))
 
 # ---------------------------- Accesssing Items---------------------------------------------------
 
-letters[0] = "A"
-print(letters[0:2])
+# letters[0] = "A"
+# print(letters[0:2])
+# print(letters)
+# numbers = list(range(20))
+# print(numbers[:: 3])
+
+
+# ---------------------List Unpacking------------------------------------
+numbers = [1, 2, 3, 4, 5, 6, 6, 7, 8]
+
+first, second, *third = numbers
+
+print(first)
+# print(second)
+print(third)
+
+# -------------------Looping over Lists-----------------------------
+
+
+letters = ["A", "B", "C"]
+for letter in enumerate(letters):
+    print(letter)
+for index, letter in enumerate(letters):
+    print(index, letter)
+
+
+# --------------------- Adding/Removing Items--------------------------------
+#  Add end of the list APPEND
+
+letters.append("D")
 print(letters)
-numbers = list(range(20))
-print(numbers[:: 3])
+
+# Add items for the specific index use INSERT
+letters.insert(0, "-")
+print(letters)
+
+# Removing items from the list POP
+
+letters.pop(0)
+letters.remove("B")
+del letters[0: 1]
+letters.clear()
+print(letters)
+
+# -------------------------Finding Items from the List-------------------------
+letters = ["A", "B", "C"]
+print(letters.index("A"))
+# print(letters)
+if "D" in letters:
+    print(letters.index("D"))
+
+    # ----------------------------------Soriting List---------------------------------
+
+numbers_sorts = [2, 5, 3, 7, 9, 1]
+numbers_sorts.sort(reverse=True)
+print(numbers_sorts)
+
+
+items = [
+    ("product0", 9),
+    ("product2", 10),
+    ("product1", 8),
+    ("product3", 15)
+
+]
+
+items.sort()
+print(items)
+
+# -------------------------------------------------Map Function ----------------------------------------------
+
+
+prices = []
+for item in items:
+    prices.append(item[0])
+
+print(prices)
+
+x = map(lambda item: item[1], items)
+for item in x:
+    print("mapping_function", item)
