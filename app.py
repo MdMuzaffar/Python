@@ -446,3 +446,25 @@ print(prices)
 x = map(lambda item: item[1], items)
 for item in x:
     print("mapping_function", item)
+
+# ---------------------------------------- Filter Function ----------------------------------------------------------
+
+x = list(filter(lambda item: item[1] >= 10, items))
+print("Number grater then 10 :", x)
+
+# ---------------------------------------List Comprehension --------------------------------
+# -------------------------------- use both MAP and Filter Function------------------------------
+prices = list(map(lambda item: item[1], items))
+prices = [item[1] for item in items]
+
+
+filter = list(filter(lambda item: item[1] >= 10, items))
+filter = [item[1] for item in items if item[1] >= 10]
+
+# --------------------------------------ZIP Function----------------------------------
+
+list1 = (1, 3, 5)
+list2 = (2, 5, 8)
+
+print(list(zip(list1, list2)))
+print(list(zip("abcd", list1, list2)))
