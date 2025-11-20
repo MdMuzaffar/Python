@@ -1,6 +1,7 @@
 
 
 # scopes
+from collections import deque
 import math
 message = 'Muz'
 
@@ -468,3 +469,24 @@ list2 = (2, 5, 8)
 
 print(list(zip(list1, list2)))
 print(list(zip("abcd", list1, list2)))
+
+# ----------------------------------Stack-----------------------------
+browsing_session = []
+browsing_session.append(1)
+browsing_session.append(2)
+browsing_session.append(3)
+print(browsing_session)
+last = browsing_session.pop()
+print(last)
+print(browsing_session[-1])
+
+# ---------------------Queue-----------------------------
+
+queue = deque([])
+queue.append(1)
+queue.append(2)
+queue.append(3)
+queue.popleft()
+print(queue)
+
+# ----------------------------------------- tuple(is used for read only we cant modify)-----------------------------
