@@ -1,6 +1,7 @@
 
 
 # scopes
+from array import array
 from collections import deque
 import math
 message = 'Muz'
@@ -490,3 +491,77 @@ queue.popleft()
 print(queue)
 
 # ----------------------------------------- tuple(is used for read only we cant modify)-----------------------------
+li = [1, 2, 3, "PythonGeeks"]
+print(li)  # Output: [1, 2, 3, 'PythonGeeks']
+
+# tuple
+tup = (1, 2, 3, "PythonGeeks")
+print(tup)  # Output: (1, 2, 3, 'PythonGeeks')
+# set
+set_0 = {1, 2, 3, "PythonGeeks"}
+print(set_0)  # Output: {1, 2, 3, 'PythonGeeks'}
+
+
+point = [1, 2, 3]
+print(point)
+
+x, y, z = point
+if 10 in point:
+    print("existing")
+else:
+    print("Not existing")
+
+
+# -------------------------------------------------------------- Swapping Variables---------------------------
+
+x = 10
+y = 11
+
+z = x
+x = y
+y = z
+
+# x, y = y, x
+print("x", x)
+print("y", y)
+print("z", z)
+
+# ----------------------------------------------List---------------------------------------------
+
+
+num = array("i", [1, 2, 3, 4, 5])
+print(num)
+num.append(6)
+num.insert(5, 9)
+num.pop()
+num.remove(2)
+print(num)
+
+# ---------------------------------------Sets--------------------------------------------
+
+
+sets_numbers = [1, 1, 2, 2, 2, 4, 4, 5, 6, 5, 6, 7, 7]
+unique = set(sets_numbers)
+second = {1, 9}
+print(unique)
+
+print(unique | second)
+print(unique & second)
+print(unique - second)
+
+# --------------------------------Dictionaries---------------------------------------------
+
+
+points = {"x": 1, "y": 2}
+points = dict(x=1, y=2)
+points["x"] = 10
+points["z"] = 20
+if "a" in points:
+    print(points["a"])
+print(points.get("a", 0))
+del points["x"]
+print(points)
+for x in points.items():
+    print("Printing loop", x)
+for key in points:
+    print(key, points[key])
