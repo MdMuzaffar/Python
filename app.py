@@ -1,6 +1,8 @@
 
 
 # scopes
+from pprint import pprint
+from sys import getsizeof
 from array import array
 from collections import deque
 import math
@@ -565,3 +567,60 @@ for x in points.items():
     print("Printing loop", x)
 for key in points:
     print(key, points[key])
+
+# ------------------------Dictionary comprehension-------------------------------
+
+values = []
+
+for x in range(5):
+    res = values.append(x * 2)
+    print(res)
+
+valueDis = [x*3 for x in range(2)]
+print(valueDis)
+#  0000000000000000000000000----------------------SET-----------------------------------------------
+valueSet = {x * 3 for x in range(5)}
+print(valueSet)
+
+#  0000000000000000000000000----------------------DICTIONARY-----------------------------------------------
+# in dictionary we use key value pairs
+valueDictionary = {x:  x * 2 for x in range(5)}
+print(valueDictionary)
+
+# ----------------------------------------Generator Expression---------------------------------------------
+
+ValuesGeneratorWithoutExp = [x * 8 for x in range(3)]
+for x in ValuesGeneratorWithoutExp:
+    print("xxxx", x)
+
+values_with_generator = (x * 3 for x in range(1000))
+print("gen:", getsizeof(values_with_generator))
+values_with_generator = [x * 3 for x in range(1000)]
+print("List:", getsizeof(values_with_generator))
+
+
+# ---------------------------------------- Unpacking Operator----------------------------------------------------
+
+numbers_unpacking = [1, 2, 3]
+# if we add star(*) or 3 Dots(...) before the variable then it will get unpacked
+print(*numbers_unpacking)
+print(1, 2, 3)
+
+values_pack = list(range(10))
+print(values_pack)
+values_unpack = [*range(10), *"Hello World"]
+print(values_unpack)
+
+sentence = "This is Python practice"
+char_frequency = {}
+for char in sentence:
+    if char in char_frequency:
+        char_frequency[char] += 1
+    else:
+        char_frequency[char] = 1
+print(char_frequency)
+
+pprint(char_frequency, width=1)
+# ------------------how to sort--------------
+
+pprint(sorted(char_frequency.items(), key=lambda kv: kv[1], reverse=True))
