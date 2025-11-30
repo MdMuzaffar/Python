@@ -624,3 +624,88 @@ pprint(char_frequency, width=1)
 # ------------------how to sort--------------
 
 pprint(sorted(char_frequency.items(), key=lambda kv: kv[1], reverse=True))
+
+
+# ------------------------------------------Exceptions---------------------------------------------
+
+# age = int(input("Age: "))
+
+# ------------------------------- Handling exception-----------------------------------------------
+
+try:
+    Age_exception = int(input("Age:"))
+except ValueError as ex:
+    print("You didn't enter the correct or valid age")
+    print(ex)
+    print(type(ex))
+else:
+    print("Execution completed")
+print("Please continue")
+
+
+# -----------------------------------------Handling different exception-------------------------
+# In this zero cannot be divided
+#  combine the same output in one output
+try:
+    print("")
+except (ValueError, ZeroDivisionError):
+    print("You didn't enter the valid age")
+
+    # ------------or--------------------
+try:
+    print()
+except ValueError:
+    print("You didn't enter the valid age")
+except ZeroDivisionError:
+    print("You didn't enter the valid age")
+
+# -------------------------Cleaning up-------------------------------------------
+# in this we will closed the file after we finished so at the end we have to add finally with closed method
+try:
+    print()
+    file = open("app.py")
+except ValueError:
+    print("You didn't enter the valid age")
+except ZeroDivisionError:
+    print("You didn't enter the valid age")
+finally:
+    file.close()
+
+# -----------------------------The with statement------------------------------------------
+    # use with to open the file as we use with then it dont requited the finally to write for closing file
+    try:
+        with open("app.py") as file:
+            print("File opened")
+    except:
+        print("Opened")
+
+
+# --------------------------- Raising Exception----------------------------------------------
+
+
+    def calculate_xfactor(age):
+        if age <= 0:
+            raise ValueError("Age can't be zero or Negative")
+        return 10/age
+
+    try:
+        calculate_xfactor(-1)
+    except ValueError as error:
+        print(error)
+
+# -----------------------cost of raising exceptions----------------------------
+        # use pass for exception to execute the code in less time(Improving performance)
+
+
+def cal_age(age):
+    if age <= 0:
+        return None
+    return 10/age
+
+
+xfactor = cal_age(-1)
+if xfactor == None:
+    pass
+
+
+# ------------------------------------Classes----------------------------------
