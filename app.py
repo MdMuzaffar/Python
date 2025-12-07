@@ -135,32 +135,32 @@ print("Done")
 
 age = 12
 
-if age > 18:
-    print("Eligable")
-else:
-    print("Not Eligable")
+# if age > 18:
+#     print("Eligable")
+# else:
+#     print("Not Eligable")
 
-age1 = 20
-if age1 > 18:
-    message = "Eligable1"
-else:
-    message = "Not Eligable1"
+# age1 = 20
+# if age1 > 18:
+#     message = "Eligable1"
+# else:
+#     message = "Not Eligable1"
 
-message2 = "Eligable2" if age1 >= 18 else "Not Eligable2"
+# message2 = "Eligable2" if age1 >= 18 else "Not Eligable2"
 
-print(message)
-print(message2)
+# print(message)
+# print(message2)
 
-# Logical Operators
+# # Logical Operators
 
-high_income = False
-good_income = True
-student = False
+# high_income = False
+# good_income = True
+# student = False
 
-if (high_income and good_income) or not student:
-    print("Eligable")
-else:
-    print("Not Eligable")
+# if (high_income and good_income) or not student:
+#     print("Eligable")
+# else:
+#     print("Not Eligable")
 
 # short-circuit Evaluation
 
@@ -168,33 +168,33 @@ else:
 # age should be bewteen 18 and 65
 age = 16
 # if age >= 18 and age < 65:
-if 18 <= age < 65:
-    print("Eligable age")
-else:
-    print("Age Not_Eligable")
+# if 18 <= age < 65:
+#     print("Eligable age")
+# else:
+#     print("Age Not_Eligable")
 
-if 10 == "10":
-    print("a")
-elif "bag" > "apple" and "bag" > "cat":
-    print("b")
-else:
-    print("c")
+# if 10 == "10":
+#     print("a")
+# elif "bag" > "apple" and "bag" > "cat":
+#     print("b")
+# else:
+#     print("c")
 
-# For Loops
+# # For Loops
 
-for number in range(1, 3):
-    print("Attempt", number, number * ".")
+# for number in range(1, 3):
+#     print("Attempt", number, number * ".")
 
-# For Else
+# # For Else
 
-successfull = False
-for number in range(3):
-    print("Attempt")
-    if successfull:
-        print("successfull")
-        break
-else:
-    print("Attend 3 times successfully")
+# successfull = False
+# for number in range(3):
+#     print("Attempt")
+#     if successfull:
+#         print("successfull")
+#         break
+# else:
+#     print("Attend 3 times successfully")
 
 # Nested Loop
 
@@ -632,80 +632,118 @@ pprint(sorted(char_frequency.items(), key=lambda kv: kv[1], reverse=True))
 
 # ------------------------------- Handling exception-----------------------------------------------
 
-try:
-    Age_exception = int(input("Age:"))
-except ValueError as ex:
-    print("You didn't enter the correct or valid age")
-    print(ex)
-    print(type(ex))
-else:
-    print("Execution completed")
-print("Please continue")
+# try:
+#     Age_exception = int(input("Age:"))
+# except ValueError as ex:
+#     print("You didn't enter the correct or valid age")
+#     print(ex)
+#     print(type(ex))
+# else:
+#     print("Execution completed")
+# print("Please continue")
 
 
 # -----------------------------------------Handling different exception-------------------------
 # In this zero cannot be divided
 #  combine the same output in one output
-try:
-    print("")
-except (ValueError, ZeroDivisionError):
-    print("You didn't enter the valid age")
+# try:
+#     print("")
+# except (ValueError, ZeroDivisionError):
+#     print("You didn't enter the valid age")
 
-    # ------------or--------------------
-try:
-    print()
-except ValueError:
-    print("You didn't enter the valid age")
-except ZeroDivisionError:
-    print("You didn't enter the valid age")
+#     # ------------or--------------------
+# try:
+#     print()
+# except ValueError:
+#     print("You didn't enter the valid age")
+# except ZeroDivisionError:
+#     print("You didn't enter the valid age")
 
 # -------------------------Cleaning up-------------------------------------------
 # in this we will closed the file after we finished so at the end we have to add finally with closed method
-try:
-    print()
-    file = open("app.py")
-except ValueError:
-    print("You didn't enter the valid age")
-except ZeroDivisionError:
-    print("You didn't enter the valid age")
-finally:
-    file.close()
+# try:
+#     print()
+#     file = open("app.py")
+# except ValueError:
+#     print("You didn't enter the valid age")
+# except ZeroDivisionError:
+#     print("You didn't enter the valid age")
+# finally:
+#     file.close()
 
 # -----------------------------The with statement------------------------------------------
-    # use with to open the file as we use with then it dont requited the finally to write for closing file
-    try:
-        with open("app.py") as file:
-            print("File opened")
-    except:
-        print("Opened")
+# use with to open the file as we use with then it dont requited the finally to write for closing file
+#    try:
+#         with open("app.py") as file:
+#             print("File opened")
+#     except:
+#         print("Opened")
 
 
 # --------------------------- Raising Exception----------------------------------------------
 
+# def calculate_xfactor(age):
+#     if age <= 0:
+#         raise ValueError("Age can't be zero or Negative")
+#     return 10/age
 
-    def calculate_xfactor(age):
-        if age <= 0:
-            raise ValueError("Age can't be zero or Negative")
-        return 10/age
-
-    try:
-        calculate_xfactor(-1)
-    except ValueError as error:
-        print(error)
+# try:
+#     calculate_xfactor(-1)
+# except ValueError as error:
+#     print(error)
 
 # -----------------------cost of raising exceptions----------------------------
-        # use pass for exception to execute the code in less time(Improving performance)
+# use pass for exception to execute the code in less time(Improving performance)
 
 
-def cal_age(age):
-    if age <= 0:
-        return None
-    return 10/age
+# def cal_age(age):
+#     if age <= 0:
+#         return None
+#     return 10/age
 
 
-xfactor = cal_age(-1)
-if xfactor == None:
-    pass
+# xfactor = cal_age(-1)
+# if xfactor == None:
+#     pass
 
 
 # ------------------------------------Classes----------------------------------
+# class Point:
+#     def draw(self):
+#         print("draw")
+
+
+# point = Point()
+# print(type(point))
+# print(isinstance(point, Point))
+
+# ------------------------------Constructor---------------------------------------
+
+class Point:
+    eye_color = "red"
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def drow(self):
+        print(f"Point({self.x},{self.y})")
+
+
+point = Point(1, 2)
+print(point.x)
+print(point.y)
+point.drow()
+
+# -------------------------------- Class Vs Instance Attributes------------------------------------
+eye_color = "Blue"
+
+another = Point(3, 4)
+another.eye_color = "Brown"
+another.drow()
+print(another.eye_color)
+
+# -------------------------------- Class Vs Instance Methods------------------------------------
+
+
+# -------------------------------------Practice---------------------------------
