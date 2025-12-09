@@ -1,6 +1,7 @@
 
 
 # scopes
+import random
 from pprint import pprint
 from sys import getsizeof
 from array import array
@@ -774,3 +775,54 @@ class SavingAccount(BankAccount):
 
 
 # -------------------------------------Practice---------------------------------
+    # -------------Basic Calculator(Variable , Input/Output, Basic arthmetic)-----------------------/
+
+    num1 = float(input("please enter the number :"))
+    num2 = float(input("please enter the number :"))
+    operation = input("choose operation(+,-,*,%):")
+    if operation == '+':
+        print("Result", num1+num2)
+    elif operation == '-':
+        print("Result", num1-num2)
+    elif operation == '*':
+        print("Result", num1 * num2)
+    else:
+        print("Invalid number")
+
+    # -------------------------------Number guessing Game(Loops, COnditionals,Random Module)--------------
+
+
+secret = random.randint(1, 10)
+guess = 0
+while guess != secret:
+    guess = int(input("Enter the number bewteen(1-10) :"))
+    if guess < secret:
+        print("Too Low")
+    elif guess > secret:
+        print("Too High")
+print("Matching the number")
+
+# -------------------------------------- Intermediate Projects-------------------------------
+# ----------------To-Do List----------------
+
+tasks = []
+
+
+def show_tasks():
+    for i, task in enumerate(tasks, 1):
+        print(f"{i}. {task}")
+
+
+while True:
+    choice = input("Add/Remove/Show/Exit: ").lower()
+    if choice == "add":
+        choice = input("Enter task: ")
+        tasks.append(choice)
+    elif choice == "remove":
+        show_tasks()
+        idx = int(input("Enter the task number to remove: ")) - 1
+        tasks.pop(idx)
+    elif choice == "show":
+        show_tasks()
+    elif choice == "exit":
+        break
