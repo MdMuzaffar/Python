@@ -773,56 +773,86 @@ class SavingAccount(BankAccount):
         interest = self.balance * self.interest_rate
         self.balance += interest
 
+# ---------------------------------------Magic methods--------------------------------------
 
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+
+point = Point(1, 2)
+print(point)
+
+# ------------------Comparing objects-----------------------
+
+
+class Point1:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __eq__(self, other1):
+        return self.x == other1.x and self.y == other1.y
+
+
+point1 = Point1(1, 2)
+other1 = Point1(1, 2)
+print(point1 == other1)
 # -------------------------------------Practice---------------------------------
-    # -------------Basic Calculator(Variable , Input/Output, Basic arthmetic)-----------------------/
-
-    num1 = float(input("please enter the number :"))
-    num2 = float(input("please enter the number :"))
-    operation = input("choose operation(+,-,*,%):")
-    if operation == '+':
-        print("Result", num1+num2)
-    elif operation == '-':
-        print("Result", num1-num2)
-    elif operation == '*':
-        print("Result", num1 * num2)
-    else:
-        print("Invalid number")
-
-    # -------------------------------Number guessing Game(Loops, COnditionals,Random Module)--------------
+# -------------Basic Calculator(Variable , Input/Output, Basic arthmetic)-----------------------/
 
 
-secret = random.randint(1, 10)
-guess = 0
-while guess != secret:
-    guess = int(input("Enter the number bewteen(1-10) :"))
-    if guess < secret:
-        print("Too Low")
-    elif guess > secret:
-        print("Too High")
-print("Matching the number")
+# num1 = float(input("please enter the number :"))
+# num2 = float(input("please enter the number :"))
+# operation = input("choose operation(+,-,*,%):")
+# if operation == '+':
+#     print("Result", num1+num2)
+# elif operation == '-':
+#     print("Result", num1-num2)
+# elif operation == '*':
+#     print("Result", num1 * num2)
+# else:
+#     print("Invalid number")
+
+# -------------------------------Number guessing Game(Loops, COnditionals,Random Module)--------------
+
+
+# secret = random.randint(1, 10)
+# guess = 0
+# while guess != secret:
+#     guess = int(input("Enter the number bewteen(1-10) :"))
+#     if guess < secret:
+#         print("Too Low")
+#     elif guess > secret:
+#         print("Too High")
+# print("Matching the number")
 
 # -------------------------------------- Intermediate Projects-------------------------------
 # ----------------To-Do List----------------
 
-tasks = []
+# tasks = []
 
 
-def show_tasks():
-    for i, task in enumerate(tasks, 1):
-        print(f"{i}. {task}")
+# def show_tasks():
+#     for i, task in enumerate(tasks, 1):
+#         print(f"{i}. {task}")
 
 
-while True:
-    choice = input("Add/Remove/Show/Exit: ").lower()
-    if choice == "add":
-        choice = input("Enter task: ")
-        tasks.append(choice)
-    elif choice == "remove":
-        show_tasks()
-        idx = int(input("Enter the task number to remove: ")) - 1
-        tasks.pop(idx)
-    elif choice == "show":
-        show_tasks()
-    elif choice == "exit":
-        break
+# while True:
+#     choice = input("Add/Remove/Show/Exit: ").lower()
+#     if choice == "add":
+#         choice = input("Enter task: ")
+#         tasks.append(choice)
+#     elif choice == "remove":
+#         show_tasks()
+#         idx = int(input("Enter the task number to remove: ")) - 1
+#         tasks.pop(idx)
+#     elif choice == "show":
+#         show_tasks()
+#     elif choice == "exit":
+#         break
