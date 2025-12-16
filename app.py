@@ -859,44 +859,62 @@ print(point1 == other1)
 
 # start with empty list
 
-tasks = []
+# tasks = []
 
 
-def show_tasks():
-    if not tasks:
-        print("There is no tasks")
-    else:
-        for i, task in enumerate(tasks, 1):
-            print(f"{i},{task}")
+# def show_tasks():
+#     if not tasks:
+#         print("There is no tasks")
+#     else:
+#         for i, task in enumerate(tasks, 1):
+#             print(f"{i},{task}")
 
 
-while True:
-    print("\nOptions: Add / Remove / pop /  sort / Clear / Show / String / Exit")
-    choice = input("Enter the choice: ").lower()
+# while True:
+#     print("\nOptions: Add / Remove / pop /  sort / Clear / Show / String / Exit")
+#     choice = input("Enter the choice: ").lower()
 
-    if choice == "add":
-        task = input("Enter task: ")
-        tasks.append(task)
-        print(f"successfully added{task}")
-    elif choice == "remove":
-        show_tasks()
-        task = input("which task you want to remove: ")
-        if task in tasks:
-            tasks.remove(task)
-            print(f"Removed task {task}")
+#     if choice == "add":
+#         task = input("Enter task: ")
+#         tasks.append(task)
+#         print(f"successfully added{task}")
+#     elif choice == "remove":
+#         show_tasks()
+#         task = input("which task you want to remove: ")
+#         if task in tasks:
+#             tasks.remove(task)
+#             print(f"Removed task {task}")
+#         else:
+#             print(f"you have selected invalid task {task}")
+#     elif choice == "pop":
+#         show_tasks()
+#         idx = print(int("Which task you want to remove"))-1
+#         if 0 <= idx < int(tasks):
+#             removed = tasks.pop(idx)
+#             print(f"Task has been removed{removed}")
+#         else:
+#             print("Invalid task")
+#     elif choice == "sort":
+#         tasks.sort()
+#         print("Tasks has been sorted")
+#     elif choice == "clear":
+#         tasks.clear()
+#         print("All the tasks has bee cleared")
+
+
+class Task:
+    def __init__(self, name, priority="Medium", deadline=None):
+        self.name = name
+        self.priority = priority
+        self.deadline = deadline
+        self.completed = False
+
+    def mark_complete(self):
+        self.completed = True
+
+    def __str__(self):
+        status = "Done" if self.completed else "Pending"
+        if self.deadline:
+            return f"{self.nake} (priority:{self.priority},deadline:{self.deadline})"
         else:
-            print(f"you have selected invalid task {task}")
-    elif choice == "pop":
-        show_tasks()
-        idx = print(int("Which task you want to remove"))-1
-        if 0 <= idx < int(tasks):
-            removed = tasks.pop(idx)
-            print(f"Task has been removed{removed}")
-        else:
-            print("Invalid task")
-    elif choice == "sort":
-        tasks.sort()
-        print("Tasks has been sorted")
-    elif choice == "clear":
-        tasks.clear()
-        print("All the tasks has bee cleared")
+            return f"{self.name}(priority:{self.priority},status:{status})"
