@@ -799,10 +799,42 @@ class Point1:
     def __eq__(self, other1):
         return self.x == other1.x and self.y == other1.y
 
+    def __gt__(self, other1):
+        return self.x > other1.x and self.y > other1.y
 
-point1 = Point1(1, 2)
+# -------------Arithmetic operations------------------------
+    def __add__(self, other1):
+        return Point(self.x + other1.x, self.y + other1.y)
+
+
+point1 = Point1(10, 20)
 other1 = Point1(1, 2)
 print(point1 == other1)
+print(point1 > other1)
+
+# --------------------------------------Supporting Arithmetic operations---------------------------------
+
+combined = point1 + other1
+print(combined.x + combined.y)
+
+
+# ----------------------------------Making custom container-----------------------
+
+class TagCloud:
+    def __init__(self):
+        self.tags = {}
+
+    def add(self, tag):
+        self.tags[tag] = self.tags.get(tag, 0)+1
+
+
+cloud = TagCloud()
+cloud.add("Python")
+cloud.add("Python")
+cloud.add("Python")
+print(cloud.tags)
+
+
 # -------------------------------------Practice---------------------------------
 # -------------Basic Calculator(Variable , Input/Output, Basic arthmetic)-----------------------/
 
