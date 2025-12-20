@@ -988,19 +988,53 @@ print(m.age)
 #         print("All the tasks has bee cleared")
 
 
-class Task:
-    def __init__(self, name, priority="Medium", deadline=None):
+# class Task:
+#     def __init__(self, name, priority="Medium", deadline=None):
+#         self.name = name
+#         self.priority = priority
+#         self.deadline = deadline
+#         self.completed = False
+
+#     def mark_complete(self):
+#         self.completed = True
+
+#     def __str__(self):
+#         status = "Done" if self.completed else "Pending"
+#         if self.deadline:
+#             return f"{self.nake} (priority:{self.priority},deadline:{self.deadline})"
+#         else:
+#             return f"{self.name}(priority:{self.priority},status:{status})"
+
+
+# ------------------------------------ Add BankAccount-------------------------------------
+
+class BankAccount:
+    def __init__(self, name, balance=0):
         self.name = name
-        self.priority = priority
-        self.deadline = deadline
-        self.completed = False
+        self.balance = balance
 
-    def mark_complete(self):
-        self.completed = True
+    @property
+    def balance(self):
+        return self.__balance
 
-    def __str__(self):
-        status = "Done" if self.completed else "Pending"
-        if self.deadline:
-            return f"{self.nake} (priority:{self.priority},deadline:{self.deadline})"
-        else:
-            return f"{self.name}(priority:{self.priority},status:{status})"
+    @balance.setter
+    def balance(self, amount):
+        if amount < 0:
+            raise ValueError(f"you have insufficient balance {self.balance}")
+        self.__balance = amount
+
+    def deposit(self, amount):
+        if amount <= 0:
+            raise ValueError("Amount should be positive")
+        self.balance += amount
+        print(
+            f"amount{self.amount} has been added and current balance is {self.balance}")
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            raise ValueError(f"you account has less amount")
+        self.balance -= amount
+
+
+account = BankAccount("Muzaffar", 500)
+print(account.balance)
