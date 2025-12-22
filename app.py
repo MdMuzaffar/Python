@@ -862,9 +862,10 @@ print(product.price)
 
 
 # -------------------------------------Inheritance-----------------------------
-
+# ---------------Method OverRiding-------------------------
 class Animal:
     def __init__(self):
+        print("Animal constructor")
         self.age = 1
 
     def eat(self):
@@ -872,6 +873,11 @@ class Animal:
 
 
 class Mammal(Animal):
+    def __init__(self):
+        print("Mammal constructor")
+        self.weight = 2
+        super().__init__()
+
     def walk(self):
         print("walk")
 
@@ -882,12 +888,72 @@ class Fish(Animal):
 
 
 m = Mammal()
-m.eat()
+# m.eat()
 # print(m.age)
 print(m.age)
+print(m.weight)
+
+# ---------------------------------------Multilevel Inhertance--------------------------------
+
+
+class Employee:
+    def greet(self):
+        print("Employee Greet")
+
+
+class Person:
+    def greet(self):
+        print("Person Greet")
+
+
+class Manager(Employee, Person):
+    pass
+
+
+manager = Manager()
+manager.greet()
+
+# ------------------------------ Practice Leaning-----------------
+
+
+class StreamAlreadyOpen(Exception):
+    pass
+
+
+class Stream:
+    def __init__(self):
+        self.Opened = False
+
+    def open(self):
+        if self.Opened:
+            raise StreamAlreadyOpen("Already opened")
+        self.Opened = True
+
+    def close(self):
+        if not self.Opened:
+            raise StreamAlreadyOpen("Its closed")
+        self.Opened = False
+
+
+class FileStream(Stream):
+    def read(self):
+        print("File has been opened")
+
+
+class NetworkStream(Stream):
+    def read(self):
+        print("Network has been opened")
+
+
+file_stream = FileStream()
+file_stream.open()
+# file_stream.open()
+file_stream.read()
+file_stream.close()
+# file_stream.close()
+
 
 # ----------------------------------------Method Overriding-----------------------------
-
 
 # -------------------------------------Practice---------------------------------
 # -------------Basic Calculator(Variable , Input/Output, Basic arthmetic)-----------------------/
