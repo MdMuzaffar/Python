@@ -1,6 +1,10 @@
 
 
 # scopes
+import sys
+import sales
+from sales import cal_tax, calc_shipping
+from abc import ABC, abstractmethod
 import random
 from pprint import pprint
 from sys import getsizeof
@@ -913,14 +917,14 @@ class Manager(Employee, Person):
 manager = Manager()
 manager.greet()
 
-# ------------------------------ Practice Leaning-----------------
+# ------------------------------ Practice Leaning - Abstract Method-----------------
 
 
 class StreamAlreadyOpen(Exception):
     pass
 
 
-class Stream:
+class Stream(ABC):
     def __init__(self):
         self.Opened = False
 
@@ -933,6 +937,10 @@ class Stream:
         if not self.Opened:
             raise StreamAlreadyOpen("Its closed")
         self.Opened = False
+
+    @abstractmethod
+    def read(self):
+        pass
 
 
 class FileStream(Stream):
@@ -953,8 +961,51 @@ file_stream.close()
 # file_stream.close()
 
 
-# ----------------------------------------Method Overriding-----------------------------
+class MemoryStream(Stream):
+    def read(self):
+        print("This is form abastract class")
 
+
+memStream = MemoryStream()
+print(memStream.read())
+
+# ----------------------------------------Polymorphism-----------------------------
+
+
+class UIControls(ABC):
+    @abstractmethod
+    def draw(self):
+        pass
+
+
+class TextBox(UIControls):
+    def draw(self):
+        print("Text box control")
+
+
+class DropDown(UIControls):
+    def draw(self):
+        print("Dropdown box control")
+
+
+def draw(controls):
+    for control in controls:
+        control.draw()
+
+
+dd = DropDown()
+tb = TextBox()
+print(isinstance(dd, UIControls))
+
+draw([dd, tb])
+
+
+# ------------------------------------------Modules---------------------------------------------
+
+cal_tax()
+calc_shipping()
+
+print(sys.path)
 # -------------------------------------Practice---------------------------------
 # -------------Basic Calculator(Variable , Input/Output, Basic arthmetic)-----------------------/
 
