@@ -1,6 +1,7 @@
 
 
 # scopes
+import csv
 import sys
 import sales
 from sales import cal_tax, calc_shipping
@@ -1006,6 +1007,14 @@ cal_tax()
 calc_shipping()
 
 print(sys.path)
+
+
+# -----------------------------------Python_strndard_lablary--------------------
+
+with open("data.csv", "w") as file:
+    writer = csv.writer(file)
+    writer.writerow("Name", age)
+    writer.writerow("Muzaffar", 35)
 # -------------------------------------Practice---------------------------------
 # -------------Basic Calculator(Variable , Input/Output, Basic arthmetic)-----------------------/
 
