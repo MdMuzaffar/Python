@@ -23,3 +23,18 @@ def myFun(x, y=50):
 
 
 myFun(10, 2)
+
+# your_age = int(input("Please enter your age :"))
+# print(f"You said your age is {your_age}")
+# print(your_age + 3)
+
+age_text = input("Please enter you age :")
+
+try:
+    age_number = int(age_text)
+    print(f"Next year, your age will be {age_number + 1}")
+
+except ValueError:
+    print("That was not a valid number")
+
+print("Line 1\nMuzaffar Ahmed 2\t38yrs")
