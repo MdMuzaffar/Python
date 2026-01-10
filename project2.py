@@ -17,9 +17,22 @@
 #         print("Invalid input. Please enter a numeric value.")
 
 
-def get_number():
+# def get_number():
+#     while True:
+#         operand = input("Enter the number: ")
+#         try:
+#             operand = float(operand)
+#             return operand
+#         except:
+#             print("Invalid input. Please enter a numeric value.")
+
+
+# operand = get_number()
+# operand2 = get_number()
+
+def get_number(prompt):
     while True:
-        operand = input("Enter the number: ")
+        operand = input(prompt)
         try:
             operand = float(operand)
             return operand
@@ -27,8 +40,8 @@ def get_number():
             print("Invalid input. Please enter a numeric value.")
 
 
-operand = get_number()
-operand2 = get_number()
+operand = get_number("Enter the number1: ")
+operand2 = get_number("Enter the number2: ")
 result = 0
 sign = input("Enter the operation (+, -, *, /): ")
 if sign == "+":
